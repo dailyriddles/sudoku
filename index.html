@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Master - Challenge Your Mind</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h2>🔢 Sudoku Master</h2>
+            </div>
+            <div class="nav-links">
+                <a href="#game">Play</a>
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Challenge Your Mind with <span class="highlight">Sudoku Master</span></h1>
+            <p class="hero-subtitle">Experience the classic number puzzle game with a modern twist. Train your brain, improve your logic, and have fun!</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToGame()">Start Playing</button>
+                <button class="btn btn-secondary" onclick="scrollToAbout()">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-numbers">
+                <span>1</span>
+                <span>5</span>
+                <span>9</span>
+                <span>3</span>
+                <span>7</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="game-section">
+        <div class="container">
+            <h2 class="section-title">Play Sudoku</h2>
+            <p class="section-subtitle">Fill the 9×9 grid so that each column, row, and 3×3 sub-grid contains all digits from 1 to 9</p>
+            
+            <div class="game-container">
+                <div class="game-controls">
+                    <div class="control-group">
+                        <button id="btn-new" class="game-btn primary">New Puzzle</button>
+                        <button id="btn-check" class="game-btn">Check Progress</button>
+                    </div>
+                    <div class="control-group">
+                        <button id="btn-hint" class="game-btn">Get Hint</button>
+                        <button id="btn-solve" class="game-btn">Show Solution</button>
+                        <button id="btn-clear" class="game-btn danger">Clear Board</button>
+                    </div>
+                </div>
+
+                <div class="board-container">
+                    <table class="sudoku-board" id="board" aria-label="Sudoku board"></table>
+                </div>
+
+                <div id="status" class="game-status"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Sudoku Master?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Smart Hints</h3>
+                    <p>Get intelligent hints when you're stuck without spoiling the fun</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Validation</h3>
+                    <p>Real-time conflict detection helps you learn faster</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎲</div>
+                    <h3>Multiple Puzzles</h3>
+                    <p>Enjoy different challenging puzzles with varying difficulty levels</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Play seamlessly on any device, anywhere, anytime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Sudoku</h2>
+                    <p>Sudoku is a logic-based number puzzle that has captivated millions worldwide. Originally popularized in Japan, this game challenges your reasoning skills and provides hours of engaging entertainment.</p>
+                    <p>Our modern implementation combines the classic gameplay you love with contemporary design and user-friendly features to create the ultimate Sudoku experience.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">9x9</span>
+                            <span class="stat-label">Grid Size</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">81</span>
+                            <span class="stat-label">Total Cells</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Possibilities</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="puzzle-preview">
+                        <div class="mini-grid">
+                            <div class="mini-cell filled">5</div>
+                            <div class="mini-cell">3</div>
+                            <div class="mini-cell filled">7</div>
+                            <div class="mini-cell filled">6</div>
+                            <div class="mini-cell">1</div>
+                            <div class="mini-cell filled">9</div>
+                            <div class="mini-cell">0</div>
+                            <div class="mini-cell filled">9</div>
+                            <div class="mini-cell">8</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🧩 Sudoku Master</h3>
+                    <p>Challenge your mind, one puzzle at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Game</h4>
+                        <ul>
+                            <li><a href="#game">Play Now</a></li>
+                            <li><a href="#game">New Puzzle</a></li>
+                            <li><a href="#features">Features</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#about">How to Play</a></li>
+                            <li><a href="#about">Rules</a></li>
+                            <li><a href="#about">Tips</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sudoku Master. Built with passion for puzzle lovers.</p>
+            </div>
+        </div>
+    </footer>
+
+  <script src="script.js"></script>
+    <style>
+        /* Add ripple effect styles */
+        .btn, .game-btn {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced animations */
+        .feature-card {
+            transition: all 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section-title, .section-subtitle {
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        /* Add pulse animation to the game status */
+        .game-status {
+            transition: all 0.3s ease;
+        }
+
+        .game-status:not(:empty) {
+            animation: statusPulse 0.5s ease-out;
+        }
+
+        @keyframes statusPulse {
+            0% { transform: scale(0.95); opacity: 0; }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Enhance the floating numbers animation */
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg); 
+                opacity: 0.1;
+            }
+            25% { 
+                opacity: 0.2;
+            }
+            50% { 
+                transform: translateY(-20px) rotate(5deg); 
+                opacity: 0.15;
+            }
+            75% { 
+                opacity: 0.1;
+            }
+        }
+
+        /* Add glow effect to focused cells */
+        .cell:focus {
+            background: #ddd6fe;
+            box-shadow: inset 0 0 0 2px #6366f1, 0 0 15px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Enhance button hover effects */
+        .game-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-btn.primary:hover {
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .game-btn.danger:hover {
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+        }
+
+        /* Add success animation for completed puzzle */
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.05); }
+            50% { transform: scale(1.1); }
+            75% { transform: scale(1.05); }
+        }
+
+        .sudoku-board.completed {
+            animation: celebrate 1s ease-in-out;
+            border-color: #10b981;
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+        }
+    </style>
+</body>
+</html>
